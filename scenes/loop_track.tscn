@@ -64,6 +64,9 @@ sky_mode = 1
 [node name="monsterTruckRacetrack" parent="." unique_id=175211370 instance=ExtResource("4_7yl4q")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.51885414, 0, -4.700465)
 
+[node name="SR_Env_Dirt_Track_CornerWide_01" parent="monsterTruckRacetrack" index="50" unique_id=1938675138]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 7.549789e-08, 0, -7.549789e-08, 0.99999994, 29.999996, -36.665333, 20.000015)
+
 [node name="WreckedCar1" parent="monsterTruckRacetrack" unique_id=1231244844 instance=ExtResource("6_er8xy")]
 transform = Transform3D(0.53006715, 0, 0.8479553, 0, 0.99999976, 0, -0.8479553, 0, 0.53006715, 1.2809069, -36.535397, 23.981552)
 

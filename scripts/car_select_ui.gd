@@ -23,7 +23,20 @@ func setup(models: Array):
 		var path: String = model.resource_path
 		var file = path.get_file().get_basename()
 		file = file.replace("_", " ")
-		car_names.append(file)
+		# Strip color suffix (last word) from names like "MuscleCar Blue"
+		var words = file.split(" ")
+		var colors = ["Blue", "Red", "Green", "Yellow", "Purple", "Orange", "White", "Black", "LightBlue"]
+		if words.size() > 1 and words[-1] in colors:
+			words.remove_at(words.size() - 1)
+		file = " ".join(words)
+		# Split CamelCase: "MuscleCar" -> "Muscle Car"
+		var spaced = ""
+		for j in range(file.length()):
+			var ch = file[j]
+			if j > 0 and ch == ch.to_upper() and ch != " " and file[j - 1] != " ":
+				spaced += " "
+			spaced += ch
+		car_names.append(spaced)
 	_build_ui()
 	_update_display()
 
@@ -40,10 +53,10 @@ func _build_ui():
 	# Center container
 	var panel = PanelContainer.new()
 	panel.set_anchors_preset(Control.PRESET_CENTER)
-	panel.offset_left = -200
-	panel.offset_right = 200
-	panel.offset_top = -220
-	panel.offset_bottom = 120
+	panel.offset_left = -350
+	panel.offset_right = 350
+	panel.offset_top = -360
+	panel.offset_bottom = 200
 
 	var style = StyleBoxFlat.new()
 	style.bg_color = Color(0.12, 0.12, 0.18, 0.92)
@@ -56,23 +69,23 @@ func _build_ui():
 	style.border_width_left = 2
 	style.border_width_right = 2
 	style.border_color = Color(1, 1, 1, 0.3)
-	style.content_margin_left = 20
-	style.content_margin_right = 20
-	style.content_margin_top = 20
-	style.content_margin_bottom = 20
+	style.content_margin_left = 30
+	style.content_margin_right = 30
+	style.content_margin_top = 30
+	style.content_margin_bottom = 30
 	panel.add_theme_stylebox_override("panel", style)
 	add_child(panel)
 
 	var vbox = VBoxContainer.new()
 	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
-	vbox.add_theme_constant_override("separation", 10)
+	vbox.add_theme_constant_override("separation", 16)
 	panel.add_child(vbox)
 
 	# Title
 	var title = Label.new()
 	title.text = "CHOOSE YOUR CAR"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 28)
+	title.add_theme_font_size_override("font_size", 40)
 	title.add_theme_color_override("font_color", Color(1, 0.85, 0.2))
 	vbox.add_child(title)
 
@@ -91,8 +104,8 @@ func _build_ui():
 
 	name_label = Label.new()
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_label.custom_minimum_size.x = 240
-	name_label.add_theme_font_size_override("font_size", 24)
+	name_label.custom_minimum_size.x = 340
+	name_label.add_theme_font_size_override("font_size", 32)
 	name_label.add_theme_color_override("font_color", Color.WHITE)
 	row.add_child(name_label)
 
@@ -104,15 +117,15 @@ func _build_ui():
 	var counter = Label.new()
 	counter.name = "Counter"
 	counter.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	counter.add_theme_font_size_override("font_size", 16)
+	counter.add_theme_font_size_override("font_size", 22)
 	counter.add_theme_color_override("font_color", Color(1, 1, 1, 0.5))
 	vbox.add_child(counter)
 
 	# GO button
 	go_btn = Button.new()
 	go_btn.text = "GO!"
-	go_btn.custom_minimum_size = Vector2(160, 50)
-	go_btn.add_theme_font_size_override("font_size", 28)
+	go_btn.custom_minimum_size = Vector2(240, 65)
+	go_btn.add_theme_font_size_override("font_size", 36)
 
 	var go_style = StyleBoxFlat.new()
 	go_style.bg_color = Color(0.2, 0.7, 0.3)
@@ -138,7 +151,7 @@ func _build_ui():
 func _build_preview(parent: Control):
 	# SubViewport for 3D car preview
 	preview_viewport = SubViewport.new()
-	preview_viewport.size = Vector2i(360, 200)
+	preview_viewport.size = Vector2i(600, 360)
 	preview_viewport.transparent_bg = true
 	preview_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	preview_viewport.msaa_3d = Viewport.MSAA_2X
@@ -147,8 +160,8 @@ func _build_preview(parent: Control):
 	var camera = Camera3D.new()
 	camera.fov = 40
 	preview_viewport.add_child(camera)
-	camera.transform.origin = Vector3(0.1, 0.4, 1.2)
-	camera.look_at(Vector3(-0.2, 0.1, 0), Vector3.UP)
+	camera.transform.origin = Vector3(0.15, 0.5, 1.8)
+	camera.look_at(Vector3(-0.1, 0.05, 0), Vector3.UP)
 
 	# Lighting
 	var light = DirectionalLight3D.new()
@@ -177,7 +190,7 @@ func _build_preview(parent: Control):
 
 	# SubViewportContainer to display in UI
 	var viewport_container = SubViewportContainer.new()
-	viewport_container.custom_minimum_size = Vector2(360, 200)
+	viewport_container.custom_minimum_size = Vector2(600, 360)
 	viewport_container.stretch = true
 	viewport_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	viewport_container.add_child(preview_viewport)
@@ -203,8 +216,8 @@ func _process(delta):
 func _make_arrow_btn(text: String) -> Button:
 	var btn = Button.new()
 	btn.text = text
-	btn.custom_minimum_size = Vector2(50, 50)
-	btn.add_theme_font_size_override("font_size", 28)
+	btn.custom_minimum_size = Vector2(65, 65)
+	btn.add_theme_font_size_override("font_size", 36)
 
 	var style = StyleBoxFlat.new()
 	style.bg_color = Color(0.3, 0.3, 0.4)

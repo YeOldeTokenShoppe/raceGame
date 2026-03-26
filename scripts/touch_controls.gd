@@ -27,10 +27,10 @@ func _build_ui():
 	add_child(container)
 
 	# Uniform button size
-	var btn_w = max(viewport_size.x * 0.12, 90)
-	var btn_h = max(viewport_size.y * 0.15, 65)
+	var btn_w = max(viewport_size.x * 0.16, 120)
+	var btn_h = max(viewport_size.y * 0.18, 85)
 	var margin = viewport_size.x * 0.03
-	var gap = 8.0
+	var gap = 10.0
 
 	# Left side: steering (bottom-left corner)
 	var left_x = margin
@@ -67,7 +67,7 @@ func _create_button(parent: Control, region_name: String, action: String, rect: 
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.set_anchors_preset(Control.PRESET_FULL_RECT)
 	label.add_theme_color_override("font_color", label_color)
-	label.add_theme_font_size_override("font_size", 20)
+	label.add_theme_font_size_override("font_size", 32)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.add_child(label)
 

@@ -167,7 +167,18 @@ func _ready():
 		if sphere:
 			sphere.freeze = true
 
-	# Show car selection UI
+	# Show intro screen, then car selection
+	var intro = CanvasLayer.new()
+	intro.name = "IntroScreen"
+	intro.set_script(preload("res://scripts/intro_screen.gd"))
+	add_child(intro)
+	intro.intro_finished.connect(_show_car_select)
+
+	# Show initial car on player
+	_preview_index = 0
+	_swap_vehicle_model(player, synty_car_models[0])
+
+func _show_car_select():
 	var car_select = CanvasLayer.new()
 	car_select.name = "CarSelectUI"
 	car_select.set_script(preload("res://scripts/car_select_ui.gd"))
@@ -175,10 +186,6 @@ func _ready():
 	car_select.setup(synty_car_models)
 	car_select.car_selected.connect(_on_car_selected)
 	car_select.car_previewed.connect(_preview_car)
-
-	# Show initial car on player
-	_preview_index = 0
-	_swap_vehicle_model(player, synty_car_models[0])
 
 func _preview_car(index: int):
 	var player = get_node_or_null("Vehicle")

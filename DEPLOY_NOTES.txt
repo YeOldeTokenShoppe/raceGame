@@ -1,0 +1,15 @@
+MARKET RALLY - Deploy Notes
+===========================
+
+After making changes to the game:
+
+1. Open the project in Godot
+2. Export for Web: Project > Export > Web
+3. From terminal, cd to this folder and run:
+
+   ./deploy-to-site.sh
+
+That's it! The script copies the game files to HAIL_MARY/public/game/,
+commits, and pushes. Firebase App Hosting will rebuild automatically.
+
+The game will be live at: yourdomain.com/game/index.html

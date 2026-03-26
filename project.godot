@@ -19,7 +19,6 @@ config/tags=PackedStringArray("starterkit")
 run/main_scene="uid://c04xixpylusqj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.921875, 0.921875, 0.957031, 1)
-boot_splash/image="res://splash-screen.png"
 config/icon="res://icon.png"
 
 [display]

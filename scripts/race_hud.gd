@@ -35,13 +35,13 @@ func _build_ui():
 	# Position display (top-left) — e.g. "1st"
 	position_label = _make_label(container)
 	position_label.position = Vector2(20, 20)
-	position_label.add_theme_font_size_override("font_size", 48)
+	position_label.add_theme_font_size_override("font_size", 64)
 	position_label.text = ""
 
 	# Lap counter (below timer, top-left)
 	lap_label = _make_label(container)
-	lap_label.position = Vector2(20, 180)
-	lap_label.add_theme_font_size_override("font_size", 28)
+	lap_label.position = Vector2(20, 260)
+	lap_label.add_theme_font_size_override("font_size", 40)
 	lap_label.text = ""
 
 	# Countdown (center)
@@ -67,7 +67,7 @@ func _build_ui():
 	result_label.anchor_bottom = 0.7
 	result_label.offset_left = 0
 	result_label.offset_right = 0
-	result_label.add_theme_font_size_override("font_size", 48)
+	result_label.add_theme_font_size_override("font_size", 64)
 	result_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	result_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	result_label.text = ""
@@ -76,8 +76,8 @@ func _build_ui():
 	# Race Again button (hidden until race ends)
 	race_again_btn = Button.new()
 	race_again_btn.text = "Race Again?"
-	race_again_btn.custom_minimum_size = Vector2(200, 55)
-	race_again_btn.add_theme_font_size_override("font_size", 28)
+	race_again_btn.custom_minimum_size = Vector2(280, 70)
+	race_again_btn.add_theme_font_size_override("font_size", 36)
 	race_again_btn.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	race_again_btn.offset_left = -100
 	race_again_btn.offset_right = 100
@@ -106,26 +106,24 @@ func _build_ui():
 	race_again_btn.pressed.connect(_on_race_again)
 	container.add_child(race_again_btn)
 
-	# FPS counter (top-center)
+	# FPS counter
 	fps_label = _make_label(container)
-	fps_label.anchor_left = 0.0
-	fps_label.anchor_right = 0.0
-	fps_label.position = Vector2(20, 60)
-	fps_label.add_theme_font_size_override("font_size", 48)
+	fps_label.position = Vector2(20, 85)
+	fps_label.add_theme_font_size_override("font_size", 40)
 	fps_label.add_theme_color_override("font_color", Color(1, 1, 0, 1.0))
 	fps_label.text = ""
 
 	# Coin counter (below FPS, top-left)
 	coin_label = _make_label(container)
-	coin_label.position = Vector2(20, 110)
-	coin_label.add_theme_font_size_override("font_size", 28)
+	coin_label.position = Vector2(20, 135)
+	coin_label.add_theme_font_size_override("font_size", 40)
 	coin_label.add_theme_color_override("font_color", Color(1, 0.85, 0.2))
 	coin_label.text = "Coins: 0"
 
 	# Race timer (below coins, top-left)
 	timer_label = _make_label(container)
-	timer_label.position = Vector2(20, 145)
-	timer_label.add_theme_font_size_override("font_size", 28)
+	timer_label.position = Vector2(20, 190)
+	timer_label.add_theme_font_size_override("font_size", 40)
 	timer_label.text = ""
 
 func _make_label(parent: Control) -> Label:
