@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c04xixpylusqj"]
+
+[ext_resource type="Script" uid="uid://php28kqwa48y" path="res://scripts/main.gd" id="2_2bfxo"]
+[ext_resource type="PackedScene" uid="uid://badoy1c127yhf" path="res://scenes/vehicle.tscn" id="3_7yl4q"]
+[ext_resource type="PackedScene" uid="uid://bsjlafwumuxl3" path="res://models/tracks/monsterTruckRacetrack.fbx" id="4_7yl4q"]
+[ext_resource type="PackedScene" uid="uid://bhbfiwbgjvdm2" path="res://scenes/view.tscn" id="4_oekk8"]
+[ext_resource type="PackedScene" uid="uid://b2o6crrk0oie5" path="res://models/cars/WreckedCar1.fbx" id="6_er8xy"]
+[ext_resource type="PackedScene" uid="uid://c8vkifk206p8b" path="res://models/cars/WreckedCar2.fbx" id="7_7g2wl"]
+[ext_resource type="PackedScene" uid="uid://c1of0rmvflqt7" path="res://models/cars/WreckedCar3.fbx" id="7_nwr8h"]
+[ext_resource type="PackedScene" uid="uid://d0s2jukhdchmb" path="res://models/cars/WreckedCar4.fbx" id="8_1vrbo"]
+
+[sub_resource type="Environment" id="Environment_7yl4q"]
+background_mode = 1
+background_color = Color(0.5294118, 0.80784315, 0.92156863, 1)
+background_energy_multiplier = 0.0
+ambient_light_color = Color(1, 0.9607843, 0.9019608, 1)
+ambient_light_energy = 0.99
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.54509807, 0.3529412, 0.22745098, 1)
+fog_sun_scatter = 0.3
+fog_height = 95.01
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.54509807, 0.3529412, 0.22745098, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_7yl4q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.522543, -9.761529, -10.706963, 0, 0, 0, 0, 0, 0, 9.218718, -9.706328, -12.849021, 0, 0, 0, 0, 0, 0, 8.998205, -9.694579, -15.112015, 0, 0, 0, 0, 0, 0, 7.014765, -9.747825, -18.401512, 0, 0, 0, 0, 0, 0, 2.4601858, -9.722259, -21.295425, 0, 0, 0, 0, 0, 0, -2.3519294, -9.650975, -21.464191, 0, 0, 0, 0, 0, 0, -6.4419236, -9.736489, -20.616814, 0, 0, 0, 0, 0, 0, -8.500558, -9.691539, -18.71773, 0, 0, 0, 0, 0, 0, -9.88143, -9.620631, -16.769566, 0, 0, 0, 0, 0, 0, -10.790082, -9.625857, -12.969078, 0, 0, 0, 0, 0, 0, -10.929528, -9.668242, -11.432165, 0, 0, 0, 0, 0, 0, -10.892128, -8.852473, -9.484047, 0, 0, 0, 0, 0, 0, -10.954007, -8.844876, -9.088713, 0, 0, 0, 0, 0, 0, -10.580371, -9.647746, -7.606699, 0, 0, 0, 0, 0, 0, -11.308261, -9.597909, -4.784858, 0, 0, 0, 0, 0, 0, -11.397477, -9.226062, -3.6504292, 0, 0, 0, 0, 0, 0, -11.500236, -9.19646, -2.8062649, 0, 0, 0, 0, 0, 0, -11.8934145, -9.65775, -1.4901595, 0, 0, 0, 0, 0, 0, -11.1252575, -9.609941, 0.37559605, 0, 0, 0, 0, 0, 0, -10.123601, -9.747867, 4.3887215, 0, 0, 0, 0, 0, 0, -8.806671, -9.689734, 6.9478445, 0, 0, 0, 0, 0, 0, -7.170321, -9.706244, 8.926794, 0, 0, 0, 0, 0, 0, -4.350206, -9.710809, 10.809097, 0, 0, 0, 0, 0, 0, -0.07199451, -9.656793, 11.870094, 0, 0, 0, 0, 0, 0, 1.8624642, -9.64512, 11.493677, 0, 0, 0, 0, 0, 0, 4.8879156, -9.6773405, 10.202652, 0, 0, 0, 0, 0, 0, 7.277592, -9.562882, 9.090679, 0, 0, 0, 0, 0, 0, 8.890968, -9.762483, 6.0493355, 0, 0, 0, 0, 0, 0, 9.314333, -9.705176, 3.0779552, 0, 0, 0, 0, 0, 0, 9.470641, -9.692988, 1.3035126, 0, 0, 0, 0, 0, 0, 9.160789, -8.247636, -0.08366585, 0, 0, 0, 0, 0, 0, 9.507685, -9.715375, -1.7550268, 0, 0, 0, 0, 0, 0, 9.597571, -9.657418, -3.325655, 0, 0, 0, 0, 0, 0, 10.00671, -9.162206, -5.079505, 0, 0, 0, 0, 0, 0, 10.058934, -9.673194, -6.41695, 0, 0, 0, 0, 0, 0, 9.805161, -9.976794, -8.281864),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 36
+
+[node name="LoopTrack" type="Node3D" unique_id=754833563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.3636103, 8.370731)
+script = ExtResource("2_2bfxo")
+
+[node name="View" parent="." unique_id=1760341943 node_paths=PackedStringArray("target") instance=ExtResource("4_oekk8")]
+transform = Transform3D(1.0000002, 0, 0, 0, 0.81613773, 0.5778575, 0, -0.5778577, 0.81613743, 0, 0, 0)
+target = NodePath("../Vehicle/Container")
+
+[node name="Camera" parent="View" index="0" unique_id=1903848566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Vehicle" parent="." unique_id=239534552 instance=ExtResource("3_7yl4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.702856, -11.038532, 0)
+
+[node name="Model" parent="Vehicle/Container" parent_id_path=PackedInt32Array(239534552, 1503077999) index="0" unique_id=325763824]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, -1.5)
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=2141360086]
+transform = Transform3D(-0.42261833, -0.5441655, -0.7247605, 0, -0.7996847, 0.6004202, -0.90630776, 0.25374857, 0.33796144, -0.038606644, 6.0672493, -5.2592435)
+light_energy = 1.554
+light_bake_mode = 0
+shadow_bias = 0.2
+shadow_normal_bias = 1.0
+shadow_opacity = 0.75
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 30.0
+directional_shadow_pancake_size = 2.0
+sky_mode = 1
+
+[node name="monsterTruckRacetrack" parent="." unique_id=175211370 instance=ExtResource("4_7yl4q")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.51885414, 0, -4.700465)
+
+[node name="WreckedCar1" parent="monsterTruckRacetrack" unique_id=1231244844 instance=ExtResource("6_er8xy")]
+transform = Transform3D(0.53006715, 0, 0.8479553, 0, 0.99999976, 0, -0.8479553, 0, 0.53006715, 1.2809069, -36.535397, 23.981552)
+
+[node name="WreckedCar2" parent="monsterTruckRacetrack" unique_id=632791159 instance=ExtResource("7_7g2wl")]
+transform = Transform3D(0.054549366, 0, 0.99851084, 0, 0.99999976, 0, -0.99851084, 0, 0.054549366, -0.7926464, -36.669342, -22.20399)
+
+[node name="SR_Prop_Starting_Sign_1" parent="monsterTruckRacetrack" index="160" unique_id=277977762]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 7.549787e-08, 0, -7.549787e-08, 0.99999976, -29.955032, -36.665333, 14.904557)
+
+[node name="WreckedCar3" parent="monsterTruckRacetrack" unique_id=201574267 instance=ExtResource("7_nwr8h")]
+transform = Transform3D(0.86602503, 0, 0.49999988, 0, 0.99999946, 0, -0.49999988, 0, 0.86602503, 1.73, -37, 31.099)
+
+[node name="WreckedCar4" parent="monsterTruckRacetrack" unique_id=1505421587 instance=ExtResource("8_1vrbo")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -4.937, -37, -32.234)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2047736490]
+environment = SubResource("Environment_7yl4q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=631388813]
+transform = Transform3D(1, 0, 0, 0, 0.7265747, 0.68708754, 0, -0.68708754, 0.7265747, 0.11565232, -0.25974703, -11.41692)
+light_energy = 0.7
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1401174063]
+transform = Transform3D(-0.36974683, -0.63839537, 0.6750842, 6.3519174e-08, 0.72657466, 0.68708754, -0.9291326, 0.25404847, -0.26864862, -0.07291186, -1.5309484, 5.608533)
+light_color = Color(1, 0.9098039, 0.8156863, 1)
+light_energy = 0.7
+
+[node name="RacingPath" type="Path3D" parent="." unique_id=1350641627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -1.24, 0)
+curve = SubResource("Curve3D_7yl4q")
+
+[editable path="View"]
+[editable path="Vehicle"]
+[editable path="monsterTruckRacetrack"]

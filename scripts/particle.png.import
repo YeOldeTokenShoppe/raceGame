@@ -2,22 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c026qrhqxgw3n"
-path.s3tc="res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.s3tc.ctex"
-path.etc2="res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.etc2.ctex"
+uid="uid://bo3p0g7ioblh0"
+path="res://.godot/imported/particle.png-efd468b2b8fac2f596727adca3b8ed30.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/smoke.png"
-dest_files=["res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.s3tc.ctex", "res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.etc2.ctex"]
+source_file="res://scripts/particle.png"
+dest_files=["res://.godot/imported/particle.png-efd468b2b8fac2f596727adca3b8ed30.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -39,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c026qrhqxgw3n"
-path.s3tc="res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.s3tc.ctex"
-path.etc2="res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.etc2.ctex"
+uid="uid://ba6cq6bvkdt0a"
+path.s3tc="res://.godot/imported/monsterTruckRacetrack_4.png-0806cabf8900ed01e6d2cf1b34c6899f.s3tc.ctex"
+path.etc2="res://.godot/imported/monsterTruckRacetrack_4.png-0806cabf8900ed01e6d2cf1b34c6899f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "795b88ea13fc424b2def5e6633e9fd9e"
+}
 
 [deps]
 
-source_file="res://sprites/smoke.png"
-dest_files=["res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.s3tc.ctex", "res://.godot/imported/smoke.png-4ce44d0c966a6a09693dcb33792d404a.etc2.ctex"]
+source_file="res://models/tracks/monsterTruckRacetrack_4.png"
+dest_files=["res://.godot/imported/monsterTruckRacetrack_4.png-0806cabf8900ed01e6d2cf1b34c6899f.s3tc.ctex", "res://.godot/imported/monsterTruckRacetrack_4.png-0806cabf8900ed01e6d2cf1b34c6899f.etc2.ctex"]
 
 [params]
 
@@ -25,7 +28,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

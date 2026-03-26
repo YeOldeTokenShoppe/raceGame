@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bhbfiwbgjvdm2"]
+
+[ext_resource type="Script" uid="uid://b24bstassw26s" path="res://scripts/view.gd" id="1_dbgjr"]
+
+[node name="View" type="Node3D" unique_id=1760341943 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 0, 0, 0)
+script = ExtResource("1_dbgjr")
+target = NodePath("")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1903848566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+current = true
+fov = 40.0
+far = 60.0

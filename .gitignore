@@ -14,3 +14,21 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Secrets
+*.pem
+
+# Export build artifacts
+export_presets.cfg
+*.pck
+*.wasm
+index.html
+index.js
+index.png
+index.png.import
+index.icon.png
+index.icon.png.import
+index.apple-touch-icon.png
+index.apple-touch-icon.png.import
+index.audio.worklet.js
+index.audio.position.worklet.js

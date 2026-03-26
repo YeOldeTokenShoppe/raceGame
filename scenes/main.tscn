@@ -1,151 +1,39 @@
-[gd_scene load_steps=22 format=3 uid="uid://clq7nox1juh3a"]
+[gd_scene format=3 uid="uid://clq7nox1juh3a"]
 
+[ext_resource type="Script" uid="uid://php28kqwa48y" path="res://scripts/main.gd" id="1_eb6dy"]
 [ext_resource type="Environment" uid="uid://c3bs0wfxpri8g" path="res://scenes/main-environment.tres" id="1_q4t1r"]
-[ext_resource type="Script" uid="uid://bqite16pastgo" path="res://scripts/vehicle.gd" id="2_xjb8m"]
-[ext_resource type="Texture2D" uid="uid://c026qrhqxgw3n" path="res://sprites/smoke.png" id="4_h8cj5"]
-[ext_resource type="PackedScene" uid="uid://bynb5jk1d478y" path="res://models/vehicle-truck-yellow.glb" id="4_ya4ey"]
-[ext_resource type="Script" uid="uid://b24bstassw26s" path="res://scripts/view.gd" id="5_0lrhn"]
-[ext_resource type="AudioStream" uid="uid://2in1jtv5bh0y" path="res://audio/skid.ogg" id="5_choun"]
-[ext_resource type="AudioStream" uid="uid://j6x2is8pyt8y" path="res://audio/engine.ogg" id="6_choun"]
+[ext_resource type="PackedScene" uid="uid://badoy1c127yhf" path="res://scenes/vehicle.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://bhbfiwbgjvdm2" path="res://scenes/view.tscn" id="4_85g3d"]
 [ext_resource type="MeshLibrary" uid="uid://b6myd2b7l2o2j" path="res://models/Library/mesh-library.tres" id="8_eg7gk"]
-[ext_resource type="PackedScene" uid="uid://c44tfiddyjjm1" path="res://models/vehicle-truck-green.glb" id="9_cmq2j"]
-[ext_resource type="PackedScene" uid="uid://c5e64mpylh1ge" path="res://models/vehicle-truck-purple.glb" id="10_p3c1o"]
-[ext_resource type="PackedScene" uid="uid://b34e2pvbemfac" path="res://models/vehicle-truck-red.glb" id="11_wocnk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfk12"]
-transparency = 1
-depth_draw_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_h8cj5")
-disable_receive_shadows = true
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-grow_amount = 0.5
-proximity_fade_enabled = true
-proximity_fade_distance = 0.25
-
-[sub_resource type="Curve" id="Curve_t02a3"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.503968, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_mya1o"]
-curve = SubResource("Curve_t02a3")
-
-[sub_resource type="Curve" id="Curve_bncg7"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.5, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_5pp1o"]
-curve = SubResource("Curve_bncg7")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xgt35"]
-angle_min = -90.0
-angle_max = 90.0
-gravity = Vector3(0, 0, 0)
-damping_min = 1.0
-damping_max = 1.0
-scale_min = 0.25
-scale_max = 0.5
-scale_curve = SubResource("CurveTexture_5pp1o")
-color = Color(0.3696, 0.3738, 0.42, 1)
-alpha_curve = SubResource("CurveTexture_mya1o")
-
-[sub_resource type="QuadMesh" id="QuadMesh_68fxn"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eyo0u"]
-friction = 5.0
-rough = true
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_hhncp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tipki"]
 friction = 0.0
 bounce = 0.1
 
-[node name="Main" type="Node3D"]
+[sub_resource type="Curve3D" id="Curve3D_trceg"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.7517014, 0, 11.1840515, 0, 0, 0, 0, 0, 0, 2.8421974, 0, 17.550575, 0, 0, 0, 0, 0, 0, -3.6664371, 0, 18.715878, 0, 0, 0, 0, 0, 0, -9.265568, 0, 17.976906, 0, 0, 0, 0, 0, 0, -11.112995, 0, 11.070363, 0, 0, 0, 0, 0, 0, -11.16984, 0, 3.3964272, 0, 0, 0, 0, 0, 0, -11.937233, 0, -2.344813, 0, 0, 0, 0, 0, 0, -17.110035, 0, -4.9596367, 0, 0, 0, 0, 0, 0, -18.843775, 0, -12.235664, 0, 0, 0, 0, 0, 0, -17.422676, 0, -17.522154, 0, 0, 0, 0, 0, 0, -13.443598, 0, -18.914831, 0, 0, 0, 0, 0, 0, -7.0202293, 0, -19.312738, 0, 0, 0, 0, 0, 0, -1.0231915, 0, -19.45485, 0, 0, 0, 0, 0, 0, 2.7569313, 0, -17.721107, 0, 0, 0, 0, 0, 0, 3.6948586, 0, -12.491463, 0, 0, 0, 0, 0, 0, 3.5527496, 0, -7.7734137, 0, 0, 0, 0, 0, 0, 3.6664352, 0, -1.9469054, 0, 0, 0, 0, 0, 0, 3.6664352, 0, 1.9184841, 0, 0, 0, 0, 0, 0, 3.8085442, 0, 10.359815),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 19
 
-[node name="Environment" type="WorldEnvironment" parent="."]
+[node name="Main" type="Node3D" unique_id=1444977190]
+script = ExtResource("1_eb6dy")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=1048332068]
 environment = ExtResource("1_q4t1r")
 
-[node name="Vehicle" type="Node3D" parent="."]
+[node name="Vehicle" parent="." unique_id=239534552 instance=ExtResource("3_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5)
-script = ExtResource("2_xjb8m")
 
-[node name="Ground" type="RayCast3D" parent="Vehicle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(0, -0.7, 0)
-hit_back_faces = false
-debug_shape_custom_color = Color(0.898039, 0, 0, 1)
-
-[node name="Container" type="Node3D" parent="Vehicle"]
-
-[node name="Model" parent="Vehicle/Container" instance=ExtResource("4_ya4ey")]
-
-[node name="TrailLeft" type="GPUParticles3D" parent="Vehicle/Container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.05, -0.35)
-material_override = SubResource("StandardMaterial3D_tfk12")
-cast_shadow = 0
-amount = 32
-lifetime = 0.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_xgt35")
-draw_pass_1 = SubResource("QuadMesh_68fxn")
-
-[node name="TrailRight" type="GPUParticles3D" parent="Vehicle/Container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.05, -0.35)
-material_override = SubResource("StandardMaterial3D_tfk12")
-cast_shadow = 0
-amount = 32
-lifetime = 0.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_xgt35")
-draw_pass_1 = SubResource("QuadMesh_68fxn")
-
-[node name="ScreechSound" type="AudioStreamPlayer3D" parent="Vehicle/Container"]
-stream = ExtResource("5_choun")
-autoplay = true
-
-[node name="EngineSound" type="AudioStreamPlayer3D" parent="Vehicle/Container"]
-stream = ExtResource("6_choun")
-autoplay = true
-
-[node name="Sphere" type="RigidBody3D" parent="Vehicle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-collision_layer = 8
-mass = 1000.0
-physics_material_override = SubResource("PhysicsMaterial_eyo0u")
-gravity_scale = 1.5
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 1
-linear_damp = 0.1
-angular_damp_mode = 1
-angular_damp = 4.0
-
-[node name="CollisionShape" type="CollisionShape3D" parent="Vehicle/Sphere"]
-shape = SubResource("SphereShape3D_hhncp")
-
-[node name="Plane" type="CSGBox3D" parent="."]
+[node name="Plane" type="CSGBox3D" parent="." unique_id=64603920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020978928, -1.9073486e-06, -0.0017499924)
 transparency = 1.0
 use_collision = true
 size = Vector3(60, 0, 60)
 
-[node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 3.5, 0, 5)
-script = ExtResource("5_0lrhn")
-target = NodePath("../Vehicle/Container")
-
-[node name="Camera" type="Camera3D" parent="View"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-current = true
-fov = 40.0
-far = 60.0
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1981426169]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
 shadow_enabled = true
 shadow_bias = 0.2
@@ -157,7 +45,7 @@ directional_shadow_max_distance = 30.0
 directional_shadow_pancake_size = 2.0
 sky_mode = 1
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1256165486]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.5, 0)
 mesh_library = ExtResource("8_eg7gk")
 physics_material = SubResource("PhysicsMaterial_tipki")
@@ -167,11 +55,16 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="vehicle-truck-green" parent="." instance=ExtResource("9_cmq2j")]
-transform = Transform3D(-0.139916, 0, 0.990163, 0, 1, 0, -0.990163, 0, -0.139916, -3.51261, -0.00957274, 12.7003)
 
-[node name="vehicle-truck-purple" parent="." instance=ExtResource("10_p3c1o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7772, -0.143123, -13.5596)
+[node name="RacingPath" type="Path3D" parent="." unique_id=889227825]
+curve = SubResource("Curve3D_trceg")
 
-[node name="vehicle-truck-red" parent="." instance=ExtResource("11_wocnk")]
-transform = Transform3D(-0.913034, 0, 0.407884, 0, 1, 0, -0.407884, 0, -0.913034, -1.36138, -0.148564, -23.8)
+[node name="View" parent="." unique_id=1760341943 node_paths=PackedStringArray("target") instance=ExtResource("4_85g3d")]
+transform = Transform3D(1.0000002, 0, 0, 0, 0.81613773, 0.5778575, 0, -0.5778577, 0.81613743, 0, 0, 0)
+target = NodePath("../Vehicle/Container")
+
+[node name="Camera" parent="View" index="0" unique_id=1903848566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[editable path="Vehicle"]
+[editable path="View"]
